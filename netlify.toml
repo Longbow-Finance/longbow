@@ -1,0 +1,11 @@
+# Netlify build config for the Longbow web app (Next.js in ./frontend).
+# Netlify auto-detects Next.js and enables its runtime; this just points the
+# build at the frontend subfolder of the monorepo.
+
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
