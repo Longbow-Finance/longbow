@@ -45,6 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@longbowfi",
+    creator: "@longbowfi",
     title: "Longbow — The leverage layer for $LONG",
     description,
     images: ["/longbow-og.png"],

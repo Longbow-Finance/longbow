@@ -6,7 +6,7 @@ pragma solidity 0.8.24;
                  The leverage layer for $LONG on Robinhood Chain
 
     Website   https://longbowfi.xyz
-    X         https://x.com/LongbowProtocol
+    X         https://x.com/longbowfi
     GitHub    https://github.com/Longbow-Finance
 //////////////////////////////////////////////////////////////////////////////*/
 

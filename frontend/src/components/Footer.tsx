@@ -14,7 +14,7 @@ export function Footer() {
               </div>
               <div className="leading-none">
                 <div className="text-base font-bold tracking-tight">LONGBOW</div>
-                <div className="label mt-1">PROTOCOL</div>
+                <div className="label mt-1">FINANCE</div>
               </div>
             </div>
             <p className="mt-4 max-w-xs text-sm text-[var(--color-muted)]">
@@ -22,10 +22,10 @@ export function Footer() {
               shorts. No borrowing.
             </p>
             <div className="mt-5 flex gap-2">
-              <Social label="X / Twitter" href="#">
+              <Social label="X / Twitter" href="https://x.com/longbowfi">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
               </Social>
-              <Social label="GitHub" href="#">
+              <Social label="GitHub" href="https://github.com/Longbow-Finance">
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
