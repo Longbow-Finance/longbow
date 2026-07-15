@@ -6,7 +6,7 @@ import { DownloadPdfButton } from "@/components/LitepaperDownload";
 import { LITEPAPER_META, SECTIONS, parseRuns, type Block } from "@/content/litepaper";
 
 export const metadata = {
-  title: "Longbow · Litepaper",
+  title: "Litepaper",
   description: "The Longbow protocol litepaper — leveraged longs on $LONG, in full.",
 };
 

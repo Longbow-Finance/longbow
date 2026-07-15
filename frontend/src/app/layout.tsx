@@ -16,10 +16,43 @@ const mono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
+const description =
+  "Deposit ETH, pick a multiplier, and earn $LONG rewards as the price rises. Losses feed the pool. No shorts, no borrowing, no tokens up front.";
+
 export const metadata: Metadata = {
-  title: "Longbow · Leveraged longs on LONG",
-  description:
-    "Deposit ETH, pick a multiplier, and earn LONG rewards as the price rises. Losses feed the pool. Short positions not allowed.",
+  metadataBase: new URL("https://longbow-protocol.xyz"),
+  title: {
+    default: "Longbow — The leverage layer for $LONG",
+    template: "%s · Longbow",
+  },
+  description,
+  applicationName: "Longbow",
+  keywords: [
+    "Longbow",
+    "LONG",
+    "Robinhood Chain",
+    "DeFi",
+    "leverage",
+    "Ethereum",
+  ],
+  openGraph: {
+    type: "website",
+    url: "https://longbow-protocol.xyz",
+    siteName: "Longbow",
+    title: "Longbow — The leverage layer for $LONG",
+    description,
+    images: [{ url: "/longbow-icon.png", alt: "Longbow" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Longbow — The leverage layer for $LONG",
+    description,
+    images: ["/longbow-icon.png"],
+  },
+  icons: {
+    icon: "/longbow-icon.png",
+    apple: "/longbow-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
