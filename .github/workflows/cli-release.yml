@@ -1,0 +1,68 @@
+name: CLI Release
+
+# Publishes the Longbow CLI when you push a tag like `cli-v0.1.0`.
+#   git tag cli-v0.1.0 && git push origin cli-v0.1.0
+#
+# Produces:
+#   - Standalone binaries (win/linux/macos x64 + macos arm64) attached to a GitHub Release
+#   - An npm publish of `longbow-cli` (only if the NPM_TOKEN secret is set)
+
+on:
+  push:
+    tags:
+      - "cli-v*"
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: cli
+
+jobs:
+  binaries:
+    name: Build standalone binaries
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile || bun install
+
+      - name: Build binaries (all targets)
+        run: bun run binaries
+
+      - name: Attach binaries to the release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: cli/dist/bin/*
+          fail_on_unmatched_files: true
+
+  npm:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish (skips if NPM_TOKEN is not set)
+        if: ${{ env.NODE_AUTH_TOKEN != '' }}
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
