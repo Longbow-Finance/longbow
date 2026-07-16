@@ -60,8 +60,7 @@ contract Deploy is Script {
         c.seedEth = vm.envOr("SEED_ETH", uint256(10 ether));
 
         // Uniswap V3 on Robinhood Chain (4663) — VERIFY on Blockscout before use.
-        c.positionManager =
-            vm.envOr("UNISWAP_V3_POSITION_MANAGER", address(0x73991a25C818Bf1f1128dEAaB1492D45638DE0D3));
+        c.positionManager = vm.envOr("UNISWAP_V3_POSITION_MANAGER", address(0x73991a25C818Bf1f1128dEAaB1492D45638DE0D3));
         c.swapRouter = vm.envOr("UNISWAP_V3_SWAP_ROUTER", address(0xCaf681a66D020601342297493863E78C959E5cb2));
         c.weth = vm.envOr("WETH", address(0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73));
         c.poolFee = uint24(vm.envOr("POOL_FEE", uint256(10_000))); // 1% tier
