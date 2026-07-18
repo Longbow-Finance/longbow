@@ -75,27 +75,51 @@ export default function Home() {
             />
           </div>
 
-          {/* Litepaper CTA */}
-          <Link
-            href="/litepaper"
-            className="btn group mt-4 flex w-full items-center justify-between gap-4 px-6 py-5"
-          >
-            <span className="flex items-center gap-4">
-              <span className="mono flex h-9 w-9 flex-none items-center justify-center border border-[var(--color-border-bright)] text-[var(--color-long)]">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                  <path d="M4 3h11l5 5v13H4z" />
-                  <path d="M14 3v6h6M8 13h8M8 17h5" />
-                </svg>
-              </span>
-              <span className="text-left">
-                <span className="block text-sm font-bold tracking-[0.12em]">READ THE LITEPAPER</span>
-                <span className="label tracking-normal normal-case opacity-70">
-                  The full mechanism — read online or download as PDF
+          {/* Litepaper + social */}
+          <div className="mt-4 grid gap-3 md:grid-cols-[1.4fr_1fr]">
+            <Link
+              href="/litepaper"
+              className="btn group flex w-full items-center justify-between gap-4 px-6 py-5"
+            >
+              <span className="flex items-center gap-4">
+                <span className="mono flex h-9 w-9 flex-none items-center justify-center border border-[var(--color-border-bright)] text-[var(--color-long)]">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                    <path d="M4 3h11l5 5v13H4z" />
+                    <path d="M14 3v6h6M8 13h8M8 17h5" />
+                  </svg>
+                </span>
+                <span className="text-left">
+                  <span className="block text-sm font-bold tracking-[0.12em]">READ THE LITEPAPER</span>
+                  <span className="label tracking-normal normal-case opacity-70">
+                    The full mechanism — read online or download as PDF
+                  </span>
                 </span>
               </span>
-            </span>
-            <span className="text-lg">{"\u2192"}</span>
-          </Link>
+              <span className="text-lg">{"\u2192"}</span>
+            </Link>
+
+            <a
+              href="https://x.com/longbowfi"
+              target="_blank"
+              rel="noreferrer"
+              className="btn group flex w-full items-center justify-between gap-4 px-6 py-5"
+            >
+              <span className="flex items-center gap-4">
+                <span className="mono flex h-9 w-9 flex-none items-center justify-center border border-[var(--color-border-bright)] text-[var(--color-long)]">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
+                  </svg>
+                </span>
+                <span className="text-left">
+                  <span className="block text-sm font-bold tracking-[0.12em]">FOLLOW @LONGBOWFI</span>
+                  <span className="label tracking-normal normal-case opacity-70">
+                    Launch updates on X
+                  </span>
+                </span>
+              </span>
+              <span className="text-lg">{"\u2192"}</span>
+            </a>
+          </div>
         </section>
 
         {/* Pipeline */}

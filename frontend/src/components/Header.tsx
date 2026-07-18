@@ -62,6 +62,14 @@ export function Header() {
             >
               EXPLORER
             </a>
+            <a
+              className="label hover:text-[var(--color-long)]"
+              href="https://x.com/longbowfi"
+              target="_blank"
+              rel="noreferrer"
+            >
+              X
+            </a>
           </nav>
 
           {onDashboard ? (
